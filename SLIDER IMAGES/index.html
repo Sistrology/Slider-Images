@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image slider</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+            <span style="--i:1"><img src="./images/download (1).jpg"></span>
+            <span style="--i:2"><img src="./images/download (2).jpg"></span>
+            <span style="--i:3"><img src="./images/download.jpg"></span>
+            <span style="--i:4"><img src="./images/images (1).jpg"></span>
+            <span style="--i:5"><img src="./images/images (2).jpg"></span>
+            <span style="--i:6"><img src="./images/images (3).jpg"></span>
+            <span style="--i:7"><img src="./images/images (4).jpg"></span>
+            <span style="--i:8"><img src="./images/images.jpg"></span>
+        </div>
+        <div class="btns">
+            <div class="btn prev"></div>
+            <div class="btn next"></div>
+        </div>
+    </div>
+    <script>
+let prev = document.querySelector('.prev'); 
+let next = document.querySelector('.next'); 
+let box = document.querySelector('.box');
+
+let degrees = 0;
+
+// Rotate left when the "prev" button is clicked
+prev.addEventListener('click', function () {
+    degrees += 45; 
+    box.style.transform = `perspective(1000px) rotateY(${degrees}deg)`; 
+});
+
+// Rotate right when the "next" button is clicked
+next.addEventListener('click', function () {
+    degrees -= 45; 
+    box.style.transform = `perspective(1000px) rotateY(${degrees}deg)`; 
+});
+    </script>
+</body>
+</html>
